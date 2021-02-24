@@ -1,7 +1,16 @@
 import GoogleMapReact from "google-map-react";
 import LocationMarker from "./LocationMarker";
 
-const Map = ({ center, zoom }) => {
+const Map = ({ vaccineData, center, zoom }) => {
+  const markers = vaccineData.map((ev) => {
+    return (
+      <LocationMarker
+        lat={ev.properties.c_lat_coor1}
+        lng={ev.properties.c_long_coor1}
+      />
+    );
+  });
+
   return (
     <div className="map">
       <GoogleMapReact
@@ -9,7 +18,7 @@ const Map = ({ center, zoom }) => {
         defaultCenter={center}
         defaultZoom={zoom}
       >
-        <LocationMarker lat={center.lat} lng={center.lng} />
+        {markers}
       </GoogleMapReact>
     </div>
   );
@@ -20,6 +29,6 @@ Map.defaultProps = {
     lat: 45.74846,
     lng: 4.84671,
   },
-  zoom: 6,
+  zoom: 8,
 };
 export default Map;
