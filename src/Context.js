@@ -6,8 +6,9 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [vaccineData, setVaccineData] = useState(data.features);
+  const [searchCenter, setSearchCenter] = useState("Lyon");
   return (
-    <AppContext.Provider value={{ vaccineData }}>
+    <AppContext.Provider value={{ vaccineData, searchCenter, setSearchCenter }}>
       {children}
     </AppContext.Provider>
   );
