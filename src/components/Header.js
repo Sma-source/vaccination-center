@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useGlobalContext } from "../Context";
 
 const Header = () => {
+  const searchValue = React.useRef("");
+
   return (
     <>
       <div className="header container">
@@ -8,7 +11,7 @@ const Header = () => {
           <div className="col-md-6 text-btn text-center">
             <h2>Vaccin covid-19</h2>
             <p>Trouve ton centre de vaccination</p>
-            <input type="text" name="" id="" />
+            <input type="text" id="name" ref={searchValue} />
             <button>input button</button>
           </div>
           <div className="col-md-6">
