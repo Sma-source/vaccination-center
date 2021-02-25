@@ -14,7 +14,7 @@ const Map = ({ vaccineData, center, zoom }) => {
   return (
     <div className="map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDp3H2O_3ZwsH4parPuRDYKDyvy9Xd_AqA" }}
+        bootstrapURLKeys={{ key: "" }}
         defaultCenter={center}
         defaultZoom={zoom}
       >
