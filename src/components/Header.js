@@ -1,9 +1,39 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../Context";
-
-const Header = () => {
-  const searchValue = React.useRef("");
-
+import CenterList from "./CenterList";
+const Header = ({ data }) => {
+  const [searchField, setSearchField] = useState("");
+  const [searchShow, setSearchShow] = useState(false);
+  const filteredCenters = data.filter((center) => {
+    return (
+      center.properties.c_nom
+        .toLowerCase()
+        .includes(searchField.toLowerCase()) ||
+      center.properties.c_com_nom
+        .toLowerCase()
+        .includes(searchField.toLowerCase())
+    );
+  });
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+    setSearchShow(true);
+  };
+  function searchList() {
+    if (searchField === "") {
+      return (
+        <>
+          <h1>covid center</h1>
+        </>
+      );
+    }
+    if (searchShow) {
+      return (
+        <>
+          <CenterList filteredCenters={filteredCenters} />
+        </>
+      );
+    }
+  }
   return (
     <>
       <div className="header container">
@@ -11,8 +41,10 @@ const Header = () => {
           <div className="col-md-6 text-btn text-center">
             <h2>Vaccin covid-19</h2>
             <p>Trouve ton centre de vaccination</p>
-            <input type="text" id="name" ref={searchValue} />
-            <button>input button</button>
+            <input type="search" id="name" onChange={handleChange} />
+            <button type="submit" onSubmit={handleChange}>
+              Trouver
+            </button>
           </div>
           <div className="col-md-6">
             <img
@@ -21,6 +53,7 @@ const Header = () => {
               className="img"
             />
           </div>
+          {searchList()}
         </div>
       </div>
     </>
