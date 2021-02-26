@@ -1,13 +1,12 @@
 import { useState } from "react";
 import Map from "./components/Map";
 import Header from "./components/Header";
-import CenterList from "./components/CenterList";
+import data from "./centres-vaccination.json";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <CenterList />
+      <Header data={data.features} />
     </div>
   );
 }
