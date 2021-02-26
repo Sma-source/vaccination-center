@@ -1,23 +1,13 @@
 import React from "react";
-import { useGlobalContext } from "../Context";
+import Center from "./Center";
 
-const CenterList = () => {
-  const { vaccineData } = useGlobalContext();
+const CenterList = ({ filteredCenters }) => {
+  const filtered = filteredCenters.map((center) => {
+    return <Center key={center.properties.gid} center={center} />;
+  });
   return (
-    <div>
-      <div className="cocktails-center">
-        {vaccineData.map((it) => {
-          const { c_nom, c_com_nom } = it.properties;
-          return (
-            <>
-              <p>
-                {c_nom} : {c_com_nom}{" "}
-              </p>
-              <p> </p>
-            </>
-          );
-        })}
-      </div>
+    <div className="container list">
+      <div className="row">{filtered}</div>
     </div>
   );
 };
