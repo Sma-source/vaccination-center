@@ -20,11 +20,7 @@ const Header = ({ data }) => {
   };
   function searchList() {
     if (searchField === "") {
-      return (
-        <>
-          <h1>covid center</h1>
-        </>
-      );
+      return <></>;
     }
     if (searchShow) {
       return (
