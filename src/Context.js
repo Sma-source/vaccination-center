@@ -7,17 +7,14 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [vaccineData, setVaccineData] = useState(data.features);
   const [vaccineCenter, setVaccineCenter] = useState([]);
-  const [searchCenter, setSearchCenter] = useState("Lyon");
 
   // const result = vaccineData.filter(
-  //   (item) => item.properties.c_com_nom === searchCenter
+  //   (item) => item.properties.c_com_nom === "Lyon"
   // );
   // console.log(result);
 
   return (
-    <AppContext.Provider
-      value={{ vaccineData, setSearchCenter, vaccineCenter }}
-    >
+    <AppContext.Provider value={{ vaccineData, vaccineCenter }}>
       {children}
     </AppContext.Provider>
   );
