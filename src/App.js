@@ -1,13 +1,15 @@
-import { useState } from "react";
-import Map from "./components/Map";
+import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./components/Header";
-import data from "./centres-vaccination.json";
+import Details from "./components/Details";
 
 function App() {
   return (
-    <div className="App">
-      <Header data={data.features} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Route exact path="/" component={Header} />
+        <Route exact path="/:id" component={Details} />
+      </div>
+    </BrowserRouter>
   );
 }
 
