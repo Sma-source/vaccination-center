@@ -327,19 +327,22 @@ body {
 
 h4 {
   margin-bottom: 0px;
+  padding-bottom: -2rem;
   color: #141e27;
 }
 
 .project-card-header {
   margin-top: 1.875rem;
-  margin-bottom: 10px;
+  margin-bottom: 0rem;
+  padding-bottom: -2rem;
 }
 
 .project-card-description {
   margin-right: 24px;
 }
 .legacy-panel p {
-  margin-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: -2;
   color: #657786;
 }
 
@@ -355,7 +358,7 @@ h4 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
 }
