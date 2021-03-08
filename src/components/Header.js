@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { useGlobalContext } from "../Context";
+
 import CenterList from "./CenterList";
-const Header = ({ data }) => {
+import data from "../centres-vaccination.json";
+
+const Header = () => {
   const [searchField, setSearchField] = useState("");
   const [searchShow, setSearchShow] = useState(false);
-  const filteredCenters = data.filter((center) => {
+  const [oups, setOups] = useState(data.features);
+
+  const filteredCenters = oups.filter((center) => {
     return (
       center.properties.c_nom
         .toLowerCase()
@@ -18,6 +22,7 @@ const Header = ({ data }) => {
     setSearchField(e.target.value);
     setSearchShow(true);
   };
+
   function searchList() {
     if (searchField === "") {
       return <></>;
@@ -37,10 +42,15 @@ const Header = ({ data }) => {
           <div className="col-md-6 text-btn text-center">
             <h2>Vaccin covid-19</h2>
             <p>Trouve ton centre de vaccination</p>
-            <input type="search" id="name" onChange={handleChange} />
-            <button type="submit" onSubmit={handleChange}>
-              Trouver
-            </button>
+            <div className="form">
+              <input
+                type="search"
+                id="name"
+                onChange={handleChange}
+                placeholder="Lyon..."
+              />
+              <button type="submit">Trouver</button>
+            </div>
           </div>
           <div className="col-md-6">
             <img
