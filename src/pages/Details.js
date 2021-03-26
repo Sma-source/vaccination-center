@@ -19,6 +19,9 @@ const Details = () => {
         .map((filteredPerson) => (
           <>
             <h1 className="text-center">{filteredPerson.properties.c_nom} </h1>
+            <h3 className="text-center">
+              {filteredPerson.properties.c_structure_rais}{" "}
+            </h3>
             <ul>
               <li>{filteredPerson.properties.c_rdv_lundi}</li>
               <li>{filteredPerson.properties.c_rdv_mardi}</li>
