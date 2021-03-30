@@ -383,3 +383,8 @@ h4 {
   height: 32px;
   border-radius: 50%;
 }
+
+.btn-rdv {
+  display: flex;
+  flex-direction: column;
+}
