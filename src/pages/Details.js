@@ -23,7 +23,8 @@ const Details = () => {
               {filteredPerson.properties.c_structure_rais}{" "}
             </h3>
             <div className="row">
-              <div className="col-sm-4 col-xs-12">
+              <div className="col-sm-4 col-xs-12 text-center">
+                <h4 className="text-center">Horaires</h4>
                 <ul>
                   <li>Lundi &nbsp; {filteredPerson.properties.c_rdv_lundi}</li>
                   <li>Mardi &nbsp; {filteredPerson.properties.c_rdv_mardi}</li>
@@ -42,13 +43,15 @@ const Details = () => {
                   </li>
                 </ul>
               </div>
-              <div className="col-sm-4 col-xs-12">
-                Adresse: {filteredPerson.properties.c_adr_num}&nbsp;
+              <div className="col-sm-4 col-xs-12 text-center">
+                <h4 className="text-center">Adresse</h4>
+                {filteredPerson.properties.c_adr_num}&nbsp;
                 {filteredPerson.properties.c_adr_voie},
                 {filteredPerson.properties.c_com_cp}&nbsp;
                 {filteredPerson.properties.c_com_nom}
               </div>
-              <div className="col-sm-4 col-xs-12">
+              <div className="col-sm-4 col-xs-12 text-center">
+                <h4 className="text-center">Prise de rdv</h4>
                 <a href={filteredPerson.properties.c_rdv_site_web}>
                   <button>Rendez-vous en ligne</button>
                 </a>
