@@ -55,6 +55,9 @@ const Details = () => {
                 <a href={filteredPerson.properties.c_rdv_site_web}>
                   <button>Rendez-vous en ligne</button>
                 </a>
+                <a href={filteredPerson.properties.c_rdv_tel}>
+                  <button>Rendez-vous téléphone</button>
+                </a>
               </div>
             </div>
           </>
