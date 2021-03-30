@@ -18,11 +18,13 @@ const Details = () => {
         .filter((person) => person.properties.gid == id)
         .map((filteredPerson) => (
           <>
-            <h1 className="text-center">{filteredPerson.properties.c_nom} </h1>
-            <h3 className="text-center">
+            <h1 className="text-center pt-1">
+              {filteredPerson.properties.c_nom}{" "}
+            </h1>
+            <h3 className="text-center pt-1 pb-2">
               {filteredPerson.properties.c_structure_rais}{" "}
             </h3>
-            <div className="row">
+            <div className="row pt-3">
               <div className="col-sm-4 col-xs-12 text-center">
                 <h4 className="text-center">Horaires</h4>
                 <ul>
@@ -44,20 +46,25 @@ const Details = () => {
                 </ul>
               </div>
               <div className="col-sm-4 col-xs-12 text-center">
-                <h4 className="text-center">Adresse</h4>
+                <h4 className="text-center pb-1">Adresse</h4>
                 {filteredPerson.properties.c_adr_num}&nbsp;
                 {filteredPerson.properties.c_adr_voie},
                 {filteredPerson.properties.c_com_cp}&nbsp;
                 {filteredPerson.properties.c_com_nom}
               </div>
               <div className="col-sm-4 col-xs-12 text-center">
-                <h4 className="text-center">Prise de rdv</h4>
-                <a href={filteredPerson.properties.c_rdv_site_web}>
-                  <button>Rendez-vous en ligne</button>
-                </a>
-                <a href={filteredPerson.properties.c_rdv_tel}>
-                  <button>Rendez-vous téléphone</button>
-                </a>
+                <h4 className="text-center pb-1">Prise de rdv</h4>
+                <div className="btn-rdv">
+                  <a
+                    className="pb-1"
+                    href={filteredPerson.properties.c_rdv_site_web}
+                  >
+                    <button>Rendez-vous en ligne</button>
+                  </a>
+                  <a href={filteredPerson.properties.c_rdv_tel}>
+                    <button>Rendez-vous téléphone</button>
+                  </a>
+                </div>
               </div>
             </div>
           </>
