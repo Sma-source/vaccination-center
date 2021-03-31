@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../centres-vaccination.json";
+import { Icon } from "@iconify/react";
+import phoneIcon from "@iconify-icons/tabler/phone";
 
 const Details = () => {
   const [don, setDon] = useState(data.features);
@@ -61,8 +63,11 @@ const Details = () => {
                   >
                     <button>Rendez-vous en ligne</button>
                   </a>
-                  <a href={filteredPerson.properties.c_rdv_tel}>
-                    <button>Rendez-vous téléphone</button>
+                  <a href={`tel:${filteredPerson.properties.c_rdv_tel}`}>
+                    <button>
+                      <Icon className="icon-phone" icon={phoneIcon} />
+                      {filteredPerson.properties.c_rdv_tel}{" "}
+                    </button>
                   </a>
                 </div>
               </div>
