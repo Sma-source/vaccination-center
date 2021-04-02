@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import CenterList from "../components/CenterList";
 import data from "../centres-vaccination.json";
+import Nav from "../components/Nav";
 
 const Header = () => {
   const [searchField, setSearchField] = useState("");
@@ -37,6 +38,7 @@ const Header = () => {
   }
   return (
     <>
+      <Nav></Nav>
       <div className="header container">
         <div className="row">
           <div className="col-md-6 text-btn text-center">

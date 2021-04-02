@@ -5,7 +5,7 @@ import Details from "./pages/Details";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div id="App">
         <Route exact path="/" component={Header} />
         <Route exact path="/:id" component={Details} />
       </div>
